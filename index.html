@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!-- © 2026 Trịnh Quốc Huy. Bảo lưu mọi quyền. Nghiêm cấm sao chép, phân phối, chỉnh sửa hoặc sử dụng lại dưới mọi hình thức khi chưa có sự đồng ý bằng văn bản của tác giả. -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lucky Orb – Sinh số Vietlott</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="copyright" content="© 2026 Trịnh Quốc Huy">
+<meta name="author" content="Trịnh Quốc Huy">
+<meta name="theme-color" content="#0d0b1e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lucky Orb">
+<style>
+:root{--bg:#0d0b1e;--bg2:#1b1440;--card:rgba(255,255,255,.07);--tx:#f4efff;--mu:#a79fc9;--ac:#ffc94d;--ac2:#ff7a59;--bd:rgba(255,255,255,.14);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-t="emerald"]{--bg:#06150f;--bg2:#0d3326;--ac:#6df2b1;--ac2:#f2e46d}
+:root[data-t="sunset"]{--bg:#1c0b14;--bg2:#4a1531;--ac:#ff9d6c;--ac2:#ff5d8f}
+:root[data-t="pearl"]{--bg:#f6f3ff;--bg2:#e6defa;--card:rgba(255,255,255,.7);--tx:#2a2250;--mu:#6d6598;--ac:#7c4dff;--ac2:#e0529c;--bd:rgba(60,40,140,.16)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100%;background:radial-gradient(120% 80% at 50% 0,var(--bg2),var(--bg) 70%) fixed;color:var(--tx);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;-webkit-tap-highlight-color:transparent}
+main{max-width:560px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:26px;margin:4px 0 2px;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.5px}
+.sub{color:var(--mu);font-size:13px;margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:14px;backdrop-filter:blur(8px)}
+.lbl{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin:0 0 8px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.chip{flex:1;min-width:calc(33% - 8px);padding:10px 8px;border-radius:12px;border:1px solid var(--bd);background:transparent;color:var(--tx);font:inherit;font-size:14px;cursor:pointer;text-align:center;transition:.2s}
+.chip small{display:block;color:var(--mu);font-size:11px;margin-top:2px}
+.chip.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#1a1030;border-color:transparent;font-weight:700}
+.chip.on small{color:#1a1030aa}
+.m{min-width:calc(50% - 8px)}
+select,textarea,input[type=text],input[type=date],input[type=number]{font-family:inherit;font-size:16px;width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(0,0,0,.18);color:var(--tx);font:inherit;margin-bottom:8px}
+:root[data-t="pearl"] input,:root[data-t="pearl"] select,:root[data-t="pearl"] textarea{background:#fff}
+option{color:#222}
+.hint{font-size:12px;color:var(--mu);margin:0 0 8px;line-height:1.4}
+.go{width:100%;padding:16px;border:0;border-radius:16px;font:inherit;font-size:18px;font-weight:800;letter-spacing:1px;color:#1a1030;background:linear-gradient(135deg,var(--ac),var(--ac2));cursor:pointer;box-shadow:0 8px 30px -6px var(--ac2);margin:4px 0 16px;transition:transform .15s}
+.go:active{transform:scale(.97)}
+.ticket{position:relative;border:1px solid var(--bd);border-radius:18px;padding:14px 12px 10px;margin-bottom:10px;background:linear-gradient(160deg,var(--card),transparent);animation:slide .5s both}
+.ticket .tag{font-size:11px;color:var(--mu);letter-spacing:1px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.balls{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;min-height:46px}
+.ball{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff;text-shadow:0 1px 2px #0006;background:radial-gradient(circle at 32% 28%,#fff9 0,transparent 35%),hsl(var(--h) 75% 50%);box-shadow:inset -4px -6px 10px #0005,0 6px 14px -4px hsl(var(--h) 80% 40%);animation:pop .55s cubic-bezier(.2,1.6,.4,1) both}
+.acts{display:flex;gap:6px;justify-content:flex-end;margin-top:10px}
+.mini{border:1px solid var(--bd);background:transparent;color:var(--tx);border-radius:10px;padding:6px 10px;font:inherit;font-size:12px;cursor:pointer}
+.mini.sv{color:var(--ac);border-color:var(--ac)}
+.mini.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#1a1030;border-color:transparent;font-weight:700}
+.dots{display:flex;gap:10px}
+.dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--bd);cursor:pointer}
+.dot.on{outline:2px solid var(--tx);outline-offset:2px}
+.hist{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px dashed var(--bd);font-size:14px}
+.hist b{font-variant-numeric:tabular-nums;letter-spacing:1px}
+.hist span{color:var(--mu);font-size:11px;display:block}
+.ft{font-size:11px;color:var(--mu);text-align:center;line-height:1.5;margin-top:18px}
+.hide{display:none}
+@keyframes pop{0%{transform:scale(0) rotate(-200deg);opacity:0}100%{transform:none;opacity:1}}
+@keyframes slide{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orb{width:56px;height:56px;margin:0 auto 12px;border-radius:50%;background:conic-gradient(var(--ac),var(--ac2),var(--ac));animation:spin 1.6s linear infinite;box-shadow:0 0 30px var(--ac2);opacity:.9}
+
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea,select,option{-webkit-user-select:text!important;user-select:text!important;-webkit-touch-callout:default!important;pointer-events:auto}
+img,svg{-webkit-user-drag:none}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='170'><text x='28' y='95' transform='rotate(-25 130 85)' font-size='15' font-weight='700' fill='%23888' fill-opacity='.16' font-family='sans-serif'>© Trịnh Quốc Huy</text></svg>")}
+@media print{body{display:none!important}}
+</style>
+</head>
+<body>
+<main>
+<h1>✨ Lucky Orb</h1>
+<p class="sub">Sinh số Vietlott theo phong cách của riêng bạn</p>
+
+<div class="card">
+<p class="lbl">Loại vé</p>
+<div class="row" id="games"></div>
+</div>
+
+<div class="card">
+<p class="lbl">Cách sinh số</p>
+<div class="row" id="methods"></div>
+<div id="opt" style="margin-top:12px"></div>
+</div>
+
+<div class="card">
+<p class="lbl">Tuỳ chọn chung</p>
+<div class="row">
+<div style="flex:1"><div class="hint">Số bộ</div><input type="number" id="cnt" min="1" max="10" value="3"></div>
+<div style="flex:2"><div class="hint">Loại trừ số (vd: 13, 44)</div><input type="text" id="exc" placeholder="Số không muốn xuất hiện"></div>
+</div>
+</div>
+
+<button class="go" id="go">🎰 QUAY SỐ</button>
+<div id="out"></div>
+
+<div class='card'>
+<p class='lbl'>🎯 Dò số trúng</p>
+<div id='lat'></div>
+<div id='cres'></div>
+<div class='hint' style='margin-top:10px'>Dò một bộ 6 số bất kỳ</div>
+<input type='text' id='mq' placeholder='VD: 03 09 16 29 30 44'>
+<div id='mres'></div>
+<details style='margin-top:6px'><summary class='hint'>➕ Thêm kết quả mới</summary>
+<p class='hint'>Mỗi dòng một kỳ, dạng: 13/10/2026 | 02 11 19 28 33 47 | 05 (số phụ chỉ có ở 6/55).</p>
+<textarea id='nr' rows='2'></textarea><button class='mini' id='addr'>Thêm kết quả</button></details>
+</div>
+
+<div class='card'>
+<p class='lbl'>🧪 Kiểm thử ngược</p>
+<p class='hint'>Chạy mọi cách sinh số (mỗi cách 1 bộ), dò với kỳ đang chọn ở mục "Dò số trúng" để xem cách nào gần trúng nhất.</p>
+<div class='hint'>Mô phỏng thêm để so sánh công bằng</div>
+<select id='bts'><option value='0'>Không mô phỏng</option><option value='1000' selected>1.000 vé mỗi cách</option><option value='5000'>5.000 vé mỗi cách</option></select>
+<button class='go' id='btgo' style='font-size:16px;padding:13px'>🧪 CHẠY KIỂM THỬ</button>
+<div id='btout'></div>
+</div>
+
+<div class="card">
+<p class="lbl">Bộ số đã lưu <span id="hc"></span></p>
+<div id="hist"></div>
+<button class="mini" id="clr" style="margin-top:8px">Xoá tất cả</button>
+</div>
+
+<div class="card">
+<p class="lbl">Giao diện</p>
+<div class="dots" id="themes"></div>
+</div>
+
+<p class="ft">Mỗi kỳ quay là ngẫu nhiên độc lập — không cách nào tăng xác suất trúng. Ứng dụng chỉ để giải trí, hãy chơi có trách nhiệm.</p>
+<p class="ft" style="margin-top:6px">✨ Lucky Orb · Tác giả: <b>Trịnh Quốc Huy</b></p>
+<p class="ft" style="margin-top:4px">© 2026 Trịnh Quốc Huy. Bảo lưu mọi quyền. Nghiêm cấm sao chép, phân phối, chỉnh sửa hoặc sử dụng lại dưới mọi hình thức khi chưa có sự đồng ý bằng văn bản của tác giả.</p>
+</main>
+
+<script>
+const G={p55:{n:55,k:6,t:'6/55',s:'Power'},m45:{n:45,k:6,t:'6/45',s:'Mega'}};
+const M={rnd:['🎲 Ngẫu nhiên','Thuần may rủi'],bal:['⚖️ Cân bằng','Chẵn/lẻ, thấp/cao'],fate:['🔮 Vận mệnh','Tên + ngày sinh'],mine:['❤️ Số của tôi','Giữ số yêu thích'],wheel:['🌀 Lồng cầu','Rút từng bi'],card:['🃏 Rút bài','Xào bộ bài 1–N'],tx:['🎯 Tài xỉu','Lớn/bé, chẵn/lẻ'],fib:['🐚 Fibonacci','Dãy xoắn ốc'],gold:['✨ Tỉ lệ vàng','Phân bố đều φ'],stat:['📊 Thống kê','Nóng/lạnh/lâu chưa ra'],dream:['🌙 Giấc mơ & sự kiện','Mơ, vui buồn, sự cố, trúng quả'],weather:['🌦️ Thời tiết','Nhiệt độ, độ ẩm, gió...']};
+const GR=[['Cơ bản',['rnd','bal','fate','mine','wheel']],['Kiểu sòng bài',['card','tx']],['Toán học & khoa học',['fib','gold','stat']],['Đời sống & thiên nhiên',['dream','weather']]];
+let st={g:'p55',m:'rnd',t:'royal',cur:[]};
+try{Object.assign(st,JSON.parse(localStorage.getItem('lo_st')||'{}'));}catch(e){}
+if(!G[st.g])st.g='p55';
+let saved=[];try{saved=JSON.parse(localStorage.getItem('lo_saved')||'[]');}catch(e){}
+const $=id=>document.getElementById(id);
+const save=()=>{try{localStorage.setItem('lo_st',JSON.stringify({g:st.g,m:st.m,t:st.t,name:$('nm')?.value||st.name,dob:$('dob')?.value||st.dob,fav:$('fav')?.value||st.fav,data:st.data}));localStorage.setItem('lo_saved',JSON.stringify(saved))}catch(e){}};
+
+function renderChips(){
+$('games').innerHTML=Object.entries(G).map(([k,v])=>`<button class="chip ${st.g==k?'on':''}" data-g="${k}">${v.t}<small>${v.s}</small></button>`).join('');
+$('methods').innerHTML=GR.map(([gt,ks])=>`<p class="lbl" style="width:100%;margin:8px 0 0">${gt}</p>`+ks.map(k=>[k,M[k]]).map(([k,v])=>`<button class="chip m ${st.m==k?'on':''}" data-m="${k}">${v[0]}<small>${v[1]}</small></button>`).join('')).join('');
+$('themes').innerHTML=[['royal','#ffc94d'],['emerald','#6df2b1'],['sunset','#ff7a59'],['pearl','#7c4dff']].map(([k,c])=>`<div class="dot ${st.t==k?'on':''}" data-th="${k}" style="background:${c}"></div>`).join('');
+document.documentElement.dataset.t=st.t;st.di=0;renderCheck();
+renderOpt();
+}
+function renderOpt(){
+const o=$('opt');
+if(st.m=='fate')o.innerHTML=`<input type="text" id="nm" placeholder="Họ tên" value="${st.name||''}"><input type="date" id="dob" value="${st.dob||''}"><p class="hint">Mỗi ngày bạn sẽ có bộ số khác nhau, nhưng cùng một ngày thì luôn ra kết quả giống nhau.</p>`;
+else if(st.m=='mine')o.innerHTML=`<input type="text" id="fav" placeholder="Số may mắn, vd: 7, 19, 28" value="${st.fav||''}"><p class="hint">Nhập 1–6 số (ngày sinh, kỷ niệm...). Các số còn lại sẽ được bổ sung ngẫu nhiên.</p>`;
+else if(st.m=='bal')o.innerHTML=`<p class="hint">Tránh các bộ quá lệch: chẵn/lẻ 2–4, thấp/cao 2–4, tổng số ở mức trung bình, không quá nhiều số liền kề.</p>`;
+else if(st.m=='dream')o.innerHTML=`<textarea id="dtx" rows="2" placeholder="Kể giấc mơ hoặc chuyện hôm nay: mơ thấy rắn, bị gãy răng, vừa trúng quả..."></textarea>${Object.entries(TG).map(([c,o])=>`<p class="hint" style="margin:8px 0 4px">${c}</p><div class="row">${Object.keys(o).map(n=>`<button class="mini ${(st.tags||[]).includes(n)?'on':''}" data-tg="${n}">${n}</button>`).join('')}</div>`).join('')}<p class="hint" style="margin-top:10px">Quy đổi dân gian cho vui: mỗi điều bạn chọn hoặc gõ sẽ gợi ra vài con số, phần còn lại được bổ sung theo ngày. Không có ý nghĩa dự đoán.</p>`;
+else if(st.m=='weather')o.innerHTML=`<div class="hint">Chọn nhanh kiểu trời, rồi chỉnh theo thực tế (xem app thời tiết)</div><select id="wc"><option value="nang">☀️ Nắng nóng</option><option value="mua">🌧️ Mưa rào</option><option value="bao">🌀 Bão</option><option value="lanh">❄️ Se lạnh</option><option value="amu">☁️ Âm u</option><option value="suong">🌫️ Sương mù</option></select><div class="row" style="margin-top:8px">${[['wt','Nhiệt độ °C',35],['wh','Độ ẩm %',55],['ww','Gió km/h',10],['wr','Khả năng mưa %',5],['wp','Áp suất hPa',1008]].map(([id,l,v])=>`<div style="flex:1;min-width:28%"><div class="hint">${l}</div><input type="number" id="${id}" value="${v}"></div>`).join('')}</div><p class="hint">Các chỉ số được kết hợp (cộng, trừ, chia) rồi quy về dải số của vé.</p>`;
+else if(st.m=='card')o.innerHTML=`<p class="hint">Xào một bộ bài ${G[st.g].n} lá rồi rút 6 lá — mỗi lá mang một chất ♠♥♦♣.</p>`;
+else if(st.m=='tx')o.innerHTML=`<div class="row"><div style="flex:1"><div class="hint">Lớn / bé (lớn = quá nửa)</div><select id="tx1"><option value="L">Tài – nhiều số lớn</option><option value="B">Xỉu – nhiều số bé</option><option value="E">Đều 3-3</option></select></div><div style="flex:1"><div class="hint">Chẵn / lẻ</div><select id="tx2"><option value="O">Lẻ nhiều</option><option value="C">Chẵn nhiều</option><option value="E">Đều 3-3</option></select></div></div>`;
+else if(st.m=='fib')o.innerHTML=`<p class="hint">Chọn hai số ngẫu nhiên rồi chạy dãy Fibonacci (cộng hai số trước, lấy dư theo ${G[st.g].n}) để tạo bộ số xoắn ốc.</p>`;
+else if(st.m=='gold')o.innerHTML=`<p class="hint">Bước nhảy theo tỉ lệ vàng φ≈0,618 cho các số trải đều khắp dải, không dồn cục.</p>`;
+else if(st.m=='stat')o.innerHTML=`<div class="row"><div style="flex:1"><div class="hint">Kiểu</div><select id="sm"><option value="hot">🔥 Số nóng</option><option value="cold">🧊 Số lạnh</option><option value="mix">⚡ Nóng + lạnh</option></select></div><div style="flex:1"><div class="hint">Phạm vi</div><select id="sw"><option value="30">30 kỳ gần nhất</option><option value="all">Tất cả (kể từ độc đắc)</option></select></div></div><textarea id="dat" rows="6" placeholder="Mỗi dòng 1 kỳ, kỳ mới nhất ở trên cùng. VD:&#10;03 11 19 27 38 44&#10;07 12 25 31 40 52">${(st.data||{})[st.g]||''}</textarea><p class="hint">Để trống để dùng kết quả thật có sẵn, hoặc dán kết quả các kỳ của <b>${G[st.g].t}</b> (6 số mỗi dòng, bỏ số phụ). Để tính kể từ kỳ ra độc đắc, chỉ dán các kỳ từ đó đến nay rồi chọn “Tất cả”. Số nóng = ra nhiều; số lạnh = lâu chưa ra. Chỉ mang tính mô tả quá khứ, không dự đoán được kỳ sau.</p>`;
+else if(st.m=='wheel')o.innerHTML=`<p class="hint">Mô phỏng lồng cầu: số được rút chậm, từng viên một.</p>`;
+else o.innerHTML=`<p class="hint">Sinh bằng bộ ngẫu nhiên mật mã của trình duyệt.</p>`;
+}
+document.addEventListener('click',e=>{
+const c=e.target.closest('[data-g],[data-m],[data-th]');if(!c)return;
+if(c.dataset.g)st.g=c.dataset.g;if(c.dataset.m)st.m=c.dataset.m;if(c.dataset.th)st.t=c.dataset.th;
+save();renderChips();
+});
+
+document.addEventListener('input',e=>{if(e.target.id=='dat'){st.data=st.data||{};st.data[st.g]=e.target.value;save()}});
+const TG={'🌙 Giấc mơ':{'rắn':[12,57],'nước':[24,68],'bay':[9,36],'rơi':[7,43],'cá':[18,81],'lửa':[3,30],'người đã mất':[14,41],'tiền':[8,88],'mưa':[26,62]},'😊 Cảm xúc':{'vui':[6,66],'buồn':[4,44],'sợ':[13,31],'giận':[10,40],'yêu':[2,22],'nhớ nhà':[19,91]},'🩹 Sự cố nhẹ':{'gãy răng':[32,23],'đụng xe':[29,92],'té ngã':[11,17],'mất ví':[16,61],'chó cắn':[27,72],'ướt mưa':[15,51]},'💰 Tài lộc':{'trúng quả':[8,38],'tăng lương':[28,82],'nhặt được tiền':[39,93],'được thưởng':[25,52],'đòi được nợ':[35,53]}};
+const SY={'gẫy':'gãy','tông xe':'đụng xe','va xe':'đụng xe','va chạm':'đụng xe','rụng răng':'gãy răng','trúng số':'trúng quả','trúng mánh':'trúng quả'};
+let SEED='';
+const fold=(v,g)=>((Math.abs(Math.round(v))-1)%g.n+g.n)%g.n+1;
+const today=()=>new Date().toISOString().slice(0,10);
+function normT(s){s=(s||'').toLowerCase();Object.entries(SY).forEach(([a,b])=>s=s.split(a).join(b));return s}
+function dreamNums(g,pool){const txt=normT($('dtx').value),sel=st.tags||[],H=[];Object.values(TG).forEach(c=>Object.entries(c).forEach(([n,v])=>{if(sel.includes(n)||txt.includes(n))H.push([n,v.map(x=>fold(x,g))])}));SEED=txt+sel.join()+today();return{H,V:[...new Set(H.flatMap(h=>h[1]))].filter(x=>pool.includes(x))}}
+function weatherNums(g,pool){const[t,h,w,r,p]=['wt','wh','ww','wr','wp'].map(id=>+$(id).value||0);SEED=[t,h,w,r,p].join()+today();return[...new Set([t,h,w,r,p%100,t+h,h+w,Math.round(p/10),w+r,Math.abs(t-h),t+w].map(v=>fold(v,g)))].filter(x=>pool.includes(x))}
+function mixGen(g,pool,i,base){const r=mulb(hash(SEED+'|'+g.t+'|'+i));const b=pickFrom(base,Math.min(base.length,g.k-2),r);return srt([...b,...pickFrom(pool.filter(x=>!b.includes(x)),g.k-b.length,r)])}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-tg]');if(!b)return;const n=b.dataset.tg;st.tags=st.tags||[];const i=st.tags.indexOf(n);i<0?st.tags.push(n):st.tags.splice(i,1);b.classList.toggle('on')});
+const WP={nang:[35,55,10,5,1008],mua:[26,90,20,90,1002],bao:[24,95,70,100,985],lanh:[15,70,15,10,1020],amu:[28,75,12,40,1010],suong:[20,98,3,10,1015]};
+document.addEventListener('change',e=>{if(e.target.id=='wc'){const v=WP[e.target.value];['wt','wh','ww','wr','wp'].forEach((id,j)=>$(id).value=v[j])}});
+const RES={p55:[{d:'13/10/2026',k:1410,n:[2,14,27,40,50,53],b:26},{d:'10/10/2026',k:1409,n:[14,17,21,23,24,39],b:30,jp:'136.743.859.650'},{d:'08/10/2026',k:1408,n:[1,7,12,27,31,52],b:6},{d:'06/10/2026',k:1407,n:[6,7,18,20,24,27],b:1},{d:'03/10/2026',k:1406,n:[7,11,13,16,18,54],b:41},{d:'01/10/2026',k:1405,n:[4,5,13,34,52,55],b:15},{d:'29/09/2026',k:1404,n:[2,4,13,17,35,36],b:11},{d:'26/09/2026',k:1403,n:[14,18,21,38,48,52],b:49},{d:'24/09/2026',k:1402,n:[1,13,23,25,26,28],b:27},{d:'22/09/2026',k:1401,n:[1,3,9,11,41,46],b:10},{d:'19/09/2026',k:1400,n:[4,7,11,18,22,25],b:50}],m45:[{d:'14/10/2026',k:1575,n:[6,16,19,21,34,43],jp:'20.329.744.500'},{d:'11/10/2026',k:1574,n:[3,9,16,29,30,44],jp:'17.917.606.500'},{d:'09/10/2026',k:1573,n:[5,7,12,23,32,41]},{d:'07/10/2026',k:1572,n:[10,14,36,37,41,43]},{d:'04/10/2026',k:1571,n:[15,20,29,37,40,45]},{d:'02/10/2026',k:1570,n:[1,6,20,27,31,41]}]};
+let LIVE='';let UR={};try{UR=JSON.parse(localStorage.getItem('lo_res')||'{}')}catch(e){}
+const dk=d=>{const[x,y,z]=d.split('/').map(Number);return z*10000+y*100+x};
+function allRes(gk){const m={};[...(RES[gk]||[]),...(UR[gk]||[])].forEach(r=>m[r.d]=r);return Object.values(m).sort((a,b)=>dk(b.d)-dk(a.d))}
+function prize(gk,a,r){const hit=a.filter(x=>r.n.includes(x)).length,bn=gk=='p55'&&!!r.b&&a.includes(r.b);const P=gk=='p55'?['','','','🥉 Giải ba 50.000đ','🥈 Giải nhì 500.000đ','🥇 Giải nhất 40.000.000đ','🏆 JACKPOT 1']:['','','','🥉 Giải ba 30.000đ','🥈 Giải nhì 300.000đ','🥇 Giải nhất 10.000.000đ','🏆 JACKPOT'];return{hit,bn,p:hit==5&&bn?'💎 JACKPOT 2':P[hit]}}
+const mb=(x,e='')=>`<div class='ball' style='--h:${(Math.floor((x-1)/10)*62+20)%360};width:32px;height:32px;font-size:12px;animation:none;${e}'>${String(x).padStart(2,'0')}</div>`;
+function renderCheck(){const gk=st.g,g=G[gk],R=allRes(gk),L=$('lat');if(!L)return;
+if(!R.length){L.innerHTML=`<p class='hint'>${g.t} chưa có kết quả thật. Bạn có thể tự thêm bên dưới.</p>`;$('cres').innerHTML='';return}
+const di=Math.min(st.di||0,R.length-1),r=R[di];
+L.innerHTML=`<select id='dsel'>${R.map((x,i)=>`<option value='${i}' ${i==di?'selected':''}>${x.k?'Kỳ #'+x.k+' · ':''}${x.d}${i==0?' (mới nhất)':''}</option>`).join('')}</select><div class='balls' style='margin:10px 0 4px'>${r.n.map(x=>mb(x)).join('')}${r.b?`<span style='align-self:center;color:var(--mu)'>+</span>`+mb(r.b,'outline:2px solid var(--ac)'):''}</div>${r.jp?`<p class='hint' style='text-align:center;margin:0'>Jackpot: ${r.jp}đ</p>`:''}<p class='hint' style='text-align:center;margin:4px 0 0'>Dữ liệu đến ngày ${R[0].d}.${LIVE?' Đồng bộ tự động lúc '+LIVE+'.':''} Lịch quay 18h: Power 6/55 thứ 3-5-7, Mega 6/45 thứ 4-6-CN.</p>`;
+const T=[...(st.curG==gk?(st.cur||[]).map(a=>[a,'Vừa quay']):[]),...saved.filter(s=>s.g==g.t).map(s=>[s.a,'Đã lưu '+s.d])];
+$('cres').innerHTML=T.length?`<p class='hint' style='margin-top:8px'>Dò ${T.length} bộ số của bạn:</p>`+T.map(([a,l])=>{const q=prize(gk,a,r);return `<div class='hist'><div><div class='balls' style='justify-content:flex-start;gap:4px;min-height:0'>${a.map(x=>mb(x,r.n.includes(x)?'':'opacity:.3;filter:grayscale(1)')).join('')}</div><span>${l}</span></div><div style='font-size:12px;text-align:right'>${q.hit} số${q.bn?' + số phụ':''}<br><b style='color:${q.p?'var(--ac)':'var(--mu)'}'>${q.p||'Chưa trúng'}</b></div></div>`}).join(''):`<p class='hint'>Quay số hoặc lưu bộ số để được dò tự động.</p>`}
+document.addEventListener('change',e=>{if(e.target.id=='dsel'){st.di=+e.target.value;renderCheck();$('mq').dispatchEvent(new Event('input',{bubbles:true}))}});
+document.addEventListener('input',e=>{if(e.target.id!='mq')return;const R=allRes(st.g),r=R[Math.min(st.di||0,R.length-1)],a=nums(e.target.value).filter(x=>x>=1&&x<=G[st.g].n);if(!r||a.length!=6){$('mres').innerHTML='';return}const q=prize(st.g,a,r);$('mres').innerHTML=`<p class='hint'>${q.hit} số trùng${q.bn?' + số phụ':''} → <b>${q.p||'Chưa trúng'}</b></p>`});
+document.addEventListener('click',e=>{if(e.target.id!='addr')return;const gk=st.g,g=G[gk];let n=0;$('nr').value.split('\n').forEach(l=>{const m=l.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);if(!m)return;const ns=nums(l.replace(m[0],'')).filter(x=>x>=1&&x<=g.n);if(ns.length<6)return;(UR[gk]=UR[gk]||[]).push({d:`${m[1].padStart(2,'0')}/${m[2].padStart(2,'0')}/${m[3]}`,n:ns.slice(0,6),b:gk=='p55'?(ns[6]||0):0});n++});try{localStorage.setItem('lo_res',JSON.stringify(UR))}catch(_){}$('nr').value='';st.di=0;renderCheck();alert(n?`Đã thêm ${n} kỳ.`:'Không đọc được. Dùng dạng: 13/10/2026 | 02 11 19 28 33 47 | 05')});
+const comb=(a,b)=>{let r=1;for(let i=1;i<=b;i++)r=r*(a-b+i)/i;return r};
+function btList(g,pool,hist){const k=g.k,n=g.n,day=today(),L=[],rnd=()=>srt(pickFrom(pool,k,rf0)),add=(l,f)=>L.push({n:l,f});
+add(M.rnd[0],rnd);
+add(M.bal[0],()=>{const mean=3*(n+1);for(let t=0;t<3000;t++){const a=rnd();const od=a.filter(x=>x%2).length,lo=a.filter(x=>x<=n/2).length,s=a.reduce((x,y)=>x+y,0);let adj=0;for(let j=1;j<k;j++)if(a[j]-a[j-1]==1)adj++;if(od>=2&&od<=4&&lo>=2&&lo<=4&&s>mean*.8&&s<mean*1.2&&adj<=1)return a}return rnd()});
+add(M.fate[0],i=>srt(pickFrom(pool,k,mulb(hash((st.name||'Trịnh Quốc Huy')+'|'+(st.dob||'')+'|'+day+'|'+g.t+'|'+i)))));
+const fav=(nums(st.fav||'').length?nums(st.fav):[7,19,28]).filter(x=>pool.includes(x));
+add(M.mine[0]+' ('+fav.join('-')+')',()=>{const kp=pickFrom(fav,Math.min(k,fav.length),rf0);return srt([...kp,...pickFrom(pool.filter(x=>!kp.includes(x)),k-kp.length,rf0)])});
+add(M.wheel[0],rnd);add(M.card[0],rnd);
+add(M.tx[0]+' (Tài+Lẻ)',()=>{for(let t=0;t<3000;t++){const a=rnd();if(a.filter(x=>x>n/2).length>=4&&a.filter(x=>x%2).length>=4)return a}return rnd()});
+add(M.fib[0],()=>{let x=1+ri(n),y=1+ri(n);const q=[];for(let t=0;t<500&&q.length<k;t++){const z=(x+y)%n+1;x=y;y=z;if(!q.includes(z))q.push(z)}return q.length==k?srt(q):rnd()});
+add(M.gold[0],()=>{const f=(Math.sqrt(5)-1)/2;let s=rf0();const q=[];for(let t=0;t<300&&q.length<k;t++){s=(s+f)%1;const z=1+Math.floor(s*n);if(!q.includes(z))q.push(z)}return q.length==k?srt(q):rnd()});
+if(hist.length>=3){const f={},gp={};pool.forEach(x=>{f[x]=0;gp[x]=hist.length});hist.forEach((a,i)=>a.forEach(x=>{if(f[x]!=null){f[x]++;gp[x]=Math.min(gp[x],i)}}));const w1=x=>f[x]+.5,w2=x=>gp[x]+.5;
+add('📊 Số nóng ('+hist.length+' kỳ trước)',()=>srt(wpick(pool,k,w1)));add('📊 Số lạnh (lâu chưa ra)',()=>srt(wpick(pool,k,w2)));add('📊 Nóng + lạnh',()=>{const h=wpick(pool,k/2,w1);return srt([...h,...wpick(pool.filter(x=>!h.includes(x)),k-h.length,w2)])})}
+const tg=(st.tags&&st.tags.length?st.tags:['gãy răng','trúng quả']),V=[...new Set(Object.values(TG).flatMap(c=>Object.entries(c).filter(([nm])=>tg.includes(nm)).flatMap(([,v])=>v.map(x=>fold(x,g)))))].filter(x=>pool.includes(x));
+add(M.dream[0]+' ('+tg.join('+')+')',i=>{SEED='bt'+day+'|'+i;return mixGen(g,pool,i,V)});
+const[wt,wh,ww,wr,wp]=WP.nang,WV=[...new Set([wt,wh,ww,wr,wp%100,wt+wh,wh+ww,Math.round(wp/10),ww+wr,Math.abs(wt-wh),wt+ww].map(v=>fold(v,g)))].filter(x=>pool.includes(x));
+add(M.weather[0]+' (nắng nóng)',i=>{SEED='bw'+day+'|'+i;return mixGen(g,pool,i,WV)});
+return L}
+function runBT(){const gk=st.g,g=G[gk],R=allRes(gk),out=$('btout');
+if(!R.length){out.innerHTML=`<p class='hint'>${g.t} chưa có kết quả thật để kiểm thử.</p>`;return}
+out.innerHTML="<div class='orb'></div>";
+setTimeout(()=>{const di=Math.min(st.di||0,R.length-1),r=R[di],pool=[...Array(g.n)].map((_,i)=>i+1),hist=R.slice(di+1,di+31).map(x=>x.n),L=btList(g,pool,hist),T=+$('bts').value||0;
+const rows=L.map(o=>{const a=o.f(0);let sum=0,g3=0;for(let i=1;i<=T;i++){const m=o.f(i).filter(x=>r.n.includes(x)).length;sum+=m;if(m>=3)g3++}return{n:o.n,a,m:a.filter(x=>r.n.includes(x)).length,b:!!r.b&&a.includes(r.b),avg:sum/T,p3:g3/T*100}}).sort((x,y)=>y.m-x.m||y.b-x.b);
+const top=rows[0],E=g.k*g.k/g.n,P3=[3,4,5,6].reduce((s,j)=>s+comb(g.k,j)*comb(g.n-g.k,g.k-j)/comb(g.n,g.k),0)*100,pd=x=>String(x).padStart(2,'0');
+out.innerHTML=`<p class='hint'>Kỳ ${r.k?'#'+r.k+' · ':''}${r.d}: <b>${r.n.map(pd).join(' ')}${r.b?' + '+pd(r.b):''}</b> — ${L.length} cách, mỗi cách 1 bộ${hist.length<3?' (thiếu dữ liệu kỳ trước nên bỏ nhóm Thống kê)':''}</p><p class='hint'><b style='color:var(--ac)'>🏆 Gần trúng nhất lần này: ${top.n} — ${top.m} số${top.b?' + số phụ':''}</b></p>`+rows.map((o,i)=>`<div class='hist'><div><b>${['🥇','🥈','🥉'][i]||(i+1)+'.'} ${o.n}</b><div class='balls' style='justify-content:flex-start;gap:4px;min-height:0;margin-top:4px'>${o.a.map(x=>mb(x,r.n.includes(x)?(x==r.b?'outline:2px solid var(--ac)':''):x==r.b?'outline:2px solid var(--ac)':'opacity:.3;filter:grayscale(1)')).join('')}</div></div><div style='font-size:12px;text-align:right'><b style='color:var(--ac)'>${o.m} số${o.b?' + phụ':''}</b>${T?`<br>TB ${o.avg.toFixed(2)} · ≥3: ${o.p3.toFixed(1)}%<br><span style='color:var(--mu)'>(mô phỏng ${T} vé)</span>`:''}</div></div>`).join('')+`<p class='hint' style='margin-top:10px'>Ngẫu nhiên thuần túy: trung bình ${E.toFixed(2)} số, trùng từ 3 số ≈ ${P3.toFixed(2)}%. Mọi bộ ${g.k} số có xác suất trúng như nhau, nên thứ hạng chỉ phản ánh may rủi và việc nhìn lại khi đã biết kết quả — không dự đoán được kỳ sau. Chỉ mang tính giải trí.</p>`},40)}
+document.addEventListener('click',e=>{if(e.target.id=='btgo')runBT()});
+function stats(g){const d=($('dat').value.trim()?$('dat').value:allRes(st.g).map(r=>r.n.join(' ')).join('\n')).split('\n').map(l=>nums(l).filter(x=>x>=1&&x<=g.n).slice(0,6)).filter(a=>a.length==6);return $('sw').value=='30'?d.slice(0,30):d}
+function stt(g){const D=g.D,f={},gp={};for(let x=1;x<=g.n;x++){f[x]=0;gp[x]=D.length}D.forEach((a,i)=>a.forEach(x=>{f[x]++;gp[x]=Math.min(gp[x],i)}));return{f,gp}}
+function wpick(pool,k,w){const p=[...pool],r=[];while(r.length<k&&p.length){let t=p.reduce((s,x)=>s+w(x),0)*rf0(),j=0;for(;j<p.length-1;j++){t-=w(p[j]);if(t<=0)break}r.push(p.splice(j,1)[0])}return r}
+function sumStat(g){const{f,gp}=stt(g),L=[...Array(g.n)].map((_,i)=>i+1);const h=[...L].sort((a,b)=>f[b]-f[a]).slice(0,6),c=[...L].sort((a,b)=>gp[b]-gp[a]).slice(0,6);return `<div class="card"><p class="lbl">Thống kê ${g.D.length} kỳ</p><p class="hint">🔥 Ra nhiều: ${h.map(x=>x+' ('+f[x]+'×)').join(', ')}<br>🧊 Lâu chưa ra: ${c.map(x=>x+' ('+gp[x]+' kỳ)').join(', ')}</p></div>`}
+const ri=n=>{const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%n};
+function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
+function mulb(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const nums=s=>[...new Set((s.match(/\d+/g)||[]).map(Number))];
+function pickFrom(pool,k,rf){const p=[...pool],r=[];while(r.length<k&&p.length)r.push(p.splice(Math.floor(rf()*p.length),1)[0]);return r}
+const rf0=()=>ri(1e6)/1e6;
+const srt=a=>a.sort((x,y)=>x-y);
+
+function gen(pool,g,i){
+const k=g.k;
+if(st.m=='tx'){const a1=$('tx1').value,a2=$('tx2').value,h=g.n/2;for(let t=0;t<9000;t++){const a=srt(pickFrom(pool,k,rf0));const hi=a.filter(x=>x>h).length,od=a.filter(x=>x%2).length;if((a1=='L'?hi>=4:a1=='B'?hi<=2:hi==3)&&(a2=='O'?od>=4:a2=='C'?od<=2:od==3))return a}}
+if(st.m=='dream'||st.m=='weather')return mixGen(g,pool,i,g.V);
+if(st.m=='fib'){let x=1+ri(g.n),y=1+ri(g.n);const r=[];for(let t=0;t<500&&r.length<k;t++){const z=(x+y)%g.n+1;x=y;y=z;if(pool.includes(z)&&!r.includes(z))r.push(z)}if(r.length==k)return srt(r)}
+if(st.m=='gold'){const f=(Math.sqrt(5)-1)/2;let s=rf0();const r=[];for(let t=0;t<300&&r.length<k;t++){s=(s+f)%1;const z=1+Math.floor(s*g.n);if(pool.includes(z)&&!r.includes(z))r.push(z)}if(r.length==k)return srt(r)}
+if(st.m=='stat'){const{f,gp}=stt(g),m=$('sm').value,w1=x=>f[x]+.5,w2=x=>gp[x]+.5;if(m=='hot')return srt(wpick(pool,k,w1));if(m=='cold')return srt(wpick(pool,k,w2));const h=wpick(pool,k/2,w1);return srt([...h,...wpick(pool.filter(x=>!h.includes(x)),k-h.length,w2)])}
+if(st.m=='bal'){
+const mean=3*(g.n+1);
+for(let t=0;t<8000;t++){
+const a=srt(pickFrom(pool,k,rf0));
+const od=a.filter(x=>x%2).length,lo=a.filter(x=>x<=g.n/2).length,sum=a.reduce((x,y)=>x+y,0);
+let adj=0;for(let j=1;j<k;j++)if(a[j]-a[j-1]==1)adj++;
+if(od>=2&&od<=4&&lo>=2&&lo<=4&&sum>mean*.8&&sum<mean*1.2&&adj<=1)return a;
+}}
+if(st.m=='fate'){
+const nm=$('nm').value.trim(),d=$('dob').value;
+const day=new Date().toISOString().slice(0,10);
+const r=mulb(hash(nm.toLowerCase()+'|'+d+'|'+day+'|'+g.t+'|'+i));
+return srt(pickFrom(pool,k,r));}
+if(st.m=='mine'){
+const f=nums($('fav').value).filter(x=>pool.includes(x));
+const keep=pickFrom(f,Math.min(k,f.length),rf0);
+const rest=pickFrom(pool.filter(x=>!keep.includes(x)),k-keep.length,rf0);
+return srt([...keep,...rest]);}
+return srt(pickFrom(pool,k,rf0));
+}
+
+function ball(n,d){if(st.m=='card'){const s='♠♥♦♣'[n%4];return `<div class="ball" style="--h:0;width:44px;height:62px;border-radius:8px;background:#fff;color:${n%4==1||n%4==2?'#d62839':'#161228'};text-shadow:none;line-height:1.1;font-size:17px;box-shadow:0 6px 14px -4px #0008;animation-delay:${d}s"><span>${String(n).padStart(2,'0')}</span><span style="font-size:20px">${s}</span></div>`}return `<div class="ball" style="--h:${(Math.floor((n-1)/10)*62+20)%360};animation-delay:${d}s">${String(n).padStart(2,'0')}</div>`}
+const fmt=a=>a.map(x=>String(x).padStart(2,'0')).join(' ');
+
+$('go').onclick=async()=>{
+const g=G[st.g];save();
+const ex=nums($('exc').value);
+const pool=[...Array(g.n)].map((_,i)=>i+1).filter(x=>!ex.includes(x));
+if(pool.length<g.k+2){alert('Loại trừ quá nhiều số!');return}
+if(st.m=='fate'&&!$('nm').value.trim()){alert('Hãy nhập họ tên nhé!');return}
+if(st.m=='dream'){const d=dreamNums(g,pool);g.V=d.V;g.H=d.H;if(!g.V.length){alert('Hãy chọn ít nhất một sự kiện hoặc mô tả giấc mơ của bạn.');return}}
+if(st.m=='weather')g.V=weatherNums(g,pool);
+if(st.m=='stat'){g.D=stats(g);if(g.D.length<5){alert('Hãy dán ít nhất 5 kỳ quay (mỗi dòng 6 số).');return}}
+const c=Math.max(1,Math.min(10,+$('cnt').value||1));
+const out=$('out');
+out.innerHTML='<div class="orb"></div>';
+await new Promise(r=>setTimeout(r,700));
+out.innerHTML='';st.cur=[];st.curG=st.g;if(st.m=='stat')out.innerHTML=sumStat(g);
+if(st.m=='dream')out.innerHTML=`<div class="card"><p class="hint">🌙 ${g.H.map(h=>h[0]+' → '+h[1].join('·')).join(' · ')}</p></div>`;
+if(st.m=='weather')out.innerHTML=`<div class="card"><p class="hint">🌦️ Số rút ra từ thời tiết: ${g.V.join(', ')}</p></div>`;
+for(let i=0;i<c;i++){
+const a=gen(pool,g,i);st.cur.push(a);renderCheck();
+const el=document.createElement('div');el.className='ticket';el.style.animationDelay=i*.12+'s';
+const slow=st.m=='wheel';
+el.innerHTML=`<div class="tag"><span>BỘ ${i+1} · ${g.t}</span><span>${M[st.m][0]}</span></div><div class="balls">${slow?'':a.map((n,j)=>ball(n,j*.12+i*.1)).join('')}</div><div class="acts"><button class="mini" data-cp>Sao chép</button><button class="mini sv" data-sv>☆ Lưu</button></div>`;
+el.dataset.a=a.join(',');el.dataset.g=g.t;out.appendChild(el);
+if(slow){const b=el.querySelector('.balls');for(const n of a){b.insertAdjacentHTML('beforeend',ball(n,0));await new Promise(r=>setTimeout(r,550))}}
+}
+};
+$('out').addEventListener('click',e=>{
+const t=e.target.closest('.ticket');if(!t)return;
+const a=t.dataset.a.split(',').map(Number);
+if(e.target.matches('[data-cp]')){navigator.clipboard?.writeText(`${t.dataset.g}: ${fmt(a)}`);e.target.textContent='Đã chép ✓'}
+if(e.target.matches('[data-sv]')){saved.unshift({g:t.dataset.g,a,d:new Date().toLocaleDateString('vi-VN')});saved=saved.slice(0,40);e.target.textContent='★ Đã lưu';save();renderHist()}
+});
+function renderHist(){renderCheck();
+$('hc').textContent=saved.length?`(${saved.length})`:'';
+$('hist').innerHTML=saved.length?saved.map((s,i)=>`<div class="hist"><div><b>${fmt(s.a)}</b><span>${s.g} · ${s.d}</span></div><button class="mini" data-d="${i}">✕</button></div>`).join(''):'<p class="hint">Chưa có bộ số nào. Bấm "☆ Lưu" trên vé bạn thích.</p>';
+}
+$('hist').onclick=e=>{const i=e.target.dataset.d;if(i!=null){saved.splice(+i,1);save();renderHist()}};
+$('clr').onclick=()=>{if(saved.length&&confirm('Xoá tất cả bộ số đã lưu?')){saved=[];save();renderHist()}};
+renderChips();renderHist();
+async function loadLive(){try{const r=await fetch('results.json?'+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();for(const k in j.games||{})if(j.games[k].length)RES[k]=j.games[k];LIVE=j.updated||'';renderCheck()}catch(e){}}
+loadLive();setInterval(loadLive,600000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadLive()});
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js');
+</script>
+<script>
+(()=>{const ok=t=>t&&t.closest&&t.closest('input,textarea,select');
+['contextmenu','dragstart'].forEach(v=>document.addEventListener(v,e=>{if(!ok(e.target))e.preventDefault()}));
+['copy','cut'].forEach(v=>document.addEventListener(v,e=>{if(!ok(e.target)){e.preventDefault();if(e.clipboardData)e.clipboardData.setData('text/plain','© Trịnh Quốc Huy. Bảo lưu mọi quyền.')}}));
+document.addEventListener('keydown',e=>{const k=(e.key||'').toLowerCase(),c=e.ctrlKey||e.metaKey;if(e.key=='F12'||(c&&['u','s','p'].includes(k))||(c&&e.shiftKey&&['i','j','c'].includes(k)))e.preventDefault()});
+console.log('%c© Trịnh Quốc Huy','font:700 18px sans-serif;color:#ffc94d');console.log('Nghiêm cấm sao chép, phân phối hoặc chỉnh sửa khi chưa được tác giả đồng ý bằng văn bản.');
+})();
+</script>
+</body>
+</html>
